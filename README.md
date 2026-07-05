@@ -1,19 +1,28 @@
-FotoOwl AI — Image-to-Video Multiagent Pipeline
-An AI-powered multi-agent pipeline that converts a collection of images into a polished video reel using LangGraph, RAG, Google Gemini, and Remotion.
+#  FotoOwl AI Image-to-Video Multi-Agent Pipeline
+
+An AI-powered multi-agent pipeline that converts a collection of images into a polished video reel using **LangGraph**, **RAG**, **Google Gemini**, and **Remotion**.
 
 Built as part of the FotoOwl AI Engineering Internship assignment to demonstrate expertise in multi-agent orchestration, retrieval-augmented generation, structured outputs, and automated video generation.
 
-Features
-Intent parsing from natural language prompts
-Intelligent image selection and analysis
-AI-generated storyboard creation
-Retrieval-Augmented Generation (RAG) for style guidance
-LangGraph multi-agent workflow
-Automatic Remotion React video generation
-Compiler validation with retry mechanism
-Pipeline state tracking
-Automated video rendering
-Architecture
+---
+
+##  Features
+
+-  Intent parsing from natural language prompts
+-  Intelligent image selection and analysis
+-  AI-generated storyboard creation
+-  Retrieval-Augmented Generation (RAG) for style guidance
+-  LangGraph multi-agent workflow
+-  Automatic Remotion React video generation
+-  Compiler validation with retry mechanism
+-  Pipeline state tracking
+-  Automated video rendering
+
+---
+
+##  Architecture
+
+```
 User Prompt
       │
       ▼
@@ -39,37 +48,62 @@ Renderer
       │
       ▼
 Final Video
-Multi-Agent Workflow
-1. Intent Parser
-Extracts:
+```
 
-Video type
-Mood
-Theme
-Caption style
-Color palette
-Transition style
-2. Image Analyzer
+---
+
+## Multi-Agent Workflow
+
+### 1. Intent Parser
+Extracts:
+- Video type
+- Mood
+- Theme
+- Caption style
+- Color palette
+- Transition style
+
+---
+
+### 2. Image Analyzer
+
 Analyzes uploaded images and selects the most relevant ones based on the user's prompt.
 
-3. Storyboard Writer
+---
+
+### 3. Storyboard Writer
+
 Uses RAG to retrieve cinematic style guides and generates:
 
-Scene sequence
-Duration
-Captions
-Camera movements
-Visual effects
-4. Script Generator
-Creates a complete Remotion React component for rendering the slideshow.
+- Scene sequence
+- Duration
+- Captions
+- Camera movements
+- Visual effects
 
-5. Compiler & Fixer
+---
+
+### 4. Script Generator
+
+Creates a complete **Remotion React component** for rendering the slideshow.
+
+---
+
+### 5. Compiler & Fixer
+
 Validates generated code and retries automatically if compilation fails.
 
-6. Renderer
+---
+
+### 6. Renderer
+
 Generates the final slideshow video using Remotion.
 
-Project Structure
+---
+
+## Project Structure
+
+```
 fotoowl-pipeline/
 │
 ├── agents.py
@@ -93,8 +127,11 @@ fotoowl-pipeline/
 │
 ├── requirements.txt
 └── README.md
+```
 
-## Tech Stack
+---
+
+## 🛠️ Tech Stack
 
 - Python
 - LangGraph
@@ -108,61 +145,45 @@ fotoowl-pipeline/
 - React
 - Node.js
 
----
 
-## Installation
-
-Clone the repository
-
-cd fotoowl-pipeline
-
-Create a virtual environment
+##  Run
 
 ```bash
-python -m venv venv
-Activate it
-
-Windows
-
-venv\Scripts\activate
-Linux / Mac
-
-source venv/bin/activate
-Install dependencies
-
-pip install -r requirements.txt
-Environment Variables
-Create a .env file.
-
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-Generate an API key from:
-
-https://aistudio.google.com/app/apikey
-
-Run
 python run_demo.py
-Output
+```
+
+---
+
+## Output
+
 The pipeline generates:
 
+```
 sample_output/
 
-├── storyboard.json ├── Slideshow.tsx ├── pipeline_state.json
+├── storyboard.json
+├── Slideshow.tsx
+├── pipeline_state.json
+```
 
 and renders
 
+```
 remotion-app/out/video.mp4
 
-Skills Demonstrated
-Multi-Agent AI Systems
-LangGraph
-Retrieval-Augmented Generation (RAG)
-Google Gemini API
-Structured Outputs
-Prompt Engineering
-Vector Retrieval
-Automated Code Generation
-React Code Synthesis
-Video Generation
-Pipeline Orchestration
-Error Recovery
-Python
+
+##  Skills Demonstrated
+
+- Multi-Agent AI Systems
+- LangGraph
+- Retrieval-Augmented Generation (RAG)
+- Google Gemini API
+- Structured Outputs
+- Prompt Engineering
+- Vector Retrieval
+- Automated Code Generation
+- React Code Synthesis
+- Video Generation
+- Pipeline Orchestration
+- Error Recovery
+- Python
